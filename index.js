@@ -4,6 +4,7 @@ const connection = require("./database/database");
 const Pergunta = require("./database/Pergunta");
 const Resposta = require("./database/Resposta");
 const cors = require("cors");
+const env = require("dotenv").config();
 
 const app = express();
 
@@ -77,4 +78,6 @@ app.post("/responder", function (req, res) {
   });
 });
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+app.listen(process.env.PORT, () =>
+  console.log(`Server running on http://localhost:${process.env.PORT}`)
+);

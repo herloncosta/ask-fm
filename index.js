@@ -7,6 +7,7 @@ const cors = require("cors");
 const env = require("dotenv").config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Conexão com o banco de dados
 connection
@@ -78,6 +79,6 @@ app.post("/responder", function (req, res) {
   });
 });
 
-app.listen(process.env.PORT, () =>
-  console.log(`Server running on http://localhost:${process.env.PORT}`)
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
 );
